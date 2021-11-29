@@ -12,6 +12,11 @@
   align-items: center;
 }
 
+.img {
+  max-width: 100%;
+  height: auto;
+}
+
 .footer {
   display: flex;
   flex: 1;
