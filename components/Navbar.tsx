@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import NextLink from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
-interface Props {
-  search: any;
-}
-export default function Navbar({search}: Props) {
+import Link from "next/link";
+
+export default function Navbar() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -12,35 +12,17 @@ export default function Navbar({search}: Props) {
   }, []);
 
   return (
-    <nav className="sticky-nav flex justify-between border-b border-gray-800 p-4">
-      <img
-        className="w-auto h-10"
-        src="https://cdn.cdnlogo.com/logos/c/83/canal.svg"
-      />
-      <div className="relative text-gray-600">
-        <form onSubmit={search}>
-          <input
-            name="serch"
-            placeholder="Search"
-            className="bg-white h-8 px-5 pr-10 rounded-full text-sm focus:outline-none"
+    <nav className="sticky-nav flex justify-between p-4">
+      <Link href="/">
+        <a className="flex justify-center items-center">
+          <Image
+            src="/logos/canalplus.png"
+            alt="CanalPlus"
+            width={175}
+            height={45  }
           />
-          <button type="submit" className="absolute right-0 top-0 mt-2 mr-4">
-            <svg
-              className="h-4 w-4 fill-current"
-              xmlns="http://www.w3.org/2000/svg"
-              version="1.1"
-              id="Capa_1"
-              x="0px"
-              y="0px"
-              viewBox="0 0 56.966 56.966"
-              width="512px"
-              height="512px"
-            >
-              <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
-            </svg>
-          </button>
-        </form>
-      </div>
+        </a>
+      </Link>
     </nav>
   );
 }

@@ -1,12 +1,17 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": { "@components/*": ["components/*"], "@lib/*": ["lib/*"] },
+    "paths": {
+      "@components/*": ["components/*"],
+      "@lib/*": ["lib/*"],
+      "@types/*": ["types/*"],
+      "@constants/*": ["constants/*"]
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,

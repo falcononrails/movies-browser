@@ -1,23 +1,22 @@
+import { POSTER_IMAGE_BASE } from "@constants/constants";
 import React from "react";
 
 interface Props {
   title: string;
-  index: number;
   posterPath: string;
-  overview: string;
 }
 
-const Movie = ({ title, index, posterPath, overview }: Props) => {
-  const POSTERS_API = "https://image.tmdb.org/t/p/w500";
-
+export default function Media({ title, posterPath }: Props) {
   return (
-    <div>
+    <div className="h-100 w-50">
       <img
         className="hover:opacity-75 transition easy-in-out rounded"
-        src={POSTERS_API + posterPath}
+        src={POSTER_IMAGE_BASE + posterPath}
         alt={title}
       ></img>
-      <h3 className="text-lg text-white mt-2 hover:text-gray-300">{title}</h3>
+      <h4 className="text-white mt-2 hover:text-gray-300 font-heading">
+        {title}
+      </h4>
       <div className="flex">
         <svg className="fill-current text-orange-500 w-4" viewBox="0 0 24 24">
           <g data-name="Layer 2">
@@ -30,6 +29,4 @@ const Movie = ({ title, index, posterPath, overview }: Props) => {
       </div>
     </div>
   );
-};
-
-export default Movie;
+}
