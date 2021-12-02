@@ -9,6 +9,13 @@ A movies browser built using NextJS, TailwindCSS and TypeScript. The website is 
 - [TypeScript](https://www.typescriptlang.org/): It is a strict syntactical superset of JavaScript and adds optional static typing to the language.
 - [TMDB API](https://developers.themoviedb.org/3/): The TMDb API is a resource for developers to integrate movie, TV show and cast data along with posters or movie fan art.
 
+# Usage
+
+- Clone the repo:  `git clone https://github.com/falcononrails/canalplus-movies-browser.git`
+- Install all dependencies: `yarn install`
+- Create a `.env.local` file and put your TMDB API key in it (check .env.example for the format).
+- Run the app locally: `yarn run dev`
+
 # Home
 
 The home page displays trending movies and tv shows in a grid-display. The user can see the title and the rating of each movie/tv show, or click on a poster to see more details.
