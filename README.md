@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Canal Plus Movies Browser
 
-## Getting Started
+A movies browser built using NextJS, TailwindCSS and TypeScript. The website is powered by the TMDB API.
 
-First, run the development server:
+# Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- [Next.js](https://nextjs.org/): An open-source React front-end development web framework that enables functionality such as server-side rendering and generating static websites for React based web applications.
+- [TailwindCSS](https://tailwindcss.com):  A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup.
+- [TypeScript](https://www.typescriptlang.org/): It is a strict syntactical superset of JavaScript and adds optional static typing to the language.
+- [TMDB API](https://developers.themoviedb.org/3/): The TMDb API is a resource for developers to integrate movie, TV show and cast data along with posters or movie fan art.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Home
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+The home page displays trending movies and tv shows in a grid-display. The user can see the title and the rating of each movie/tv show, or click on a poster to see more details.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+![Home](docs/home.png)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# Search
 
-## Learn More
+The coolest feature of the app is the ability to search for movies/tv shows.
 
-To learn more about Next.js, take a look at the following resources:
+![Search](docs/search.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Details
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+When a user clicks on a poster through the home page, or through the search bar, he is redirected to the corresponding details page of the movie/tv show. The user can check the movie's/tv show's rating, description, genres and a custom quote.
 
-## Deploy on Vercel
+![Details](docs/details.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
