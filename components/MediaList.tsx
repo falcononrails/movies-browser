@@ -8,11 +8,12 @@ interface Props {
   results: Movie[] | TVShow[];
   title: string;
   type: string;
+  level: number;
 }
-export default function MediaList({ results, title, type }: Props) {
+export default function MediaList({ results, title, type, level }: Props) {
   return (
     <>
-      <h1 className="container text-3xl font-heading font-extrabold ml-3 mt-10 md:mt-8">
+      <h1 aria-label="heading" aria-level={level} className="container text-3xl font-heading font-extrabold ml-3 mt-10 md:mt-8">
         {title}
       </h1>
       <div className="my-auto mx-auto px-4 pt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-7 gap-8">

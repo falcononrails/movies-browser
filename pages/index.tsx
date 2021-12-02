@@ -22,8 +22,14 @@ export default function Home({ initialMovies, initialSeries }: any) {
         results={moviesResults}
         title={"Trending Movies"}
         type="movie"
+        level={1}
       />
-      <MediaList results={seriesResults} title={"Trending Series"} type="tv" />
+      <MediaList
+        results={seriesResults}
+        title={"Trending Series"}
+        type="tv"
+        level={2}
+      />
     </div>
   );
 }
@@ -33,7 +39,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const initialSeries = await getTrending("trending/tv/day");
 
   return {
-    props: {  
+    props: {
       initialMovies,
       initialSeries,
     },
