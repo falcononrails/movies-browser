@@ -1,15 +1,14 @@
 import React, { useCallback, useState } from "react";
 import { debounce } from "lodash";
-import axios from "axios";
 import Link from "next/link";
-import { MovieResult, SearchResult, TVResult } from "@lib/types";
-import { BASE_URL } from "constants/constants";
+import { SearchResult} from "../types/shared";
+import { setSearchResults } from "@lib/setSearchResults";
 
 const SearchBar = () => {
   const [results, setResults] = useState<SearchResult[]>([]);
 
   const delayedQuery = useCallback(
-    debounce((q) => sendQuery(q), 400),
+    debounce((query) => setSearchResults(query, setResults), 400),
     []
   );
 
@@ -17,37 +16,7 @@ const SearchBar = () => {
     delayedQuery(e.target.value);
   };
 
-  const sendQuery = (query: string) => {
-    if (query === "") setResults([]);
-    axios
-      .get<TVResult & MovieResult>(`${BASE_URL}search/multi?`, {
-        params: {
-          query: query,
-          api_key: "92b418e837b833be308bbfb1fb2aca1e",
-          language: "en-US",
-          page: 1,
-        },
-      })
-      .then((res) => {
-        const list: SearchResult[] = res.data.results
-          .filter(
-            (results) =>
-              results["media_type"] === "tv" ||
-              results["media_type"] === "movie"
-          )
-          .map((result) => {
-            if (result["media_type"] === "tv")
-              return { title: result.name, path: `/tv/${result.id}` };
-            if (result["media_type"] === "movie")
-              return { title: result["title"], path: `/movie/${result.id}` };
-          })
-          .slice(0, 6);
-        setResults(list);
-      })
-      .catch((err) => console.error(err));
-  };
-
-  const resultSuggestions = results.map((result) => (
+  const resultSuggestions = results?.map((result) => (
     <Link href={result.path} key={result.path}>
       <div className="text-gray-100 bg-gray-700 px-3 py-2 cursor-pointer hover:bg-gray-800 overflow-hidden font-heading font-medium rounded-md">
         <p>{result.title}</p>

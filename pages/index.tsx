@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import SearchBar from "@components/SearchBar";
 import MediaList from "@components/MediaList";
 import getTrending from "@lib/getTrending";
-import { Movie, MovieResult, TVResult, TVShow } from "@lib/types";
+import { GetServerSideProps } from "next";
+import { Movie } from "types/movie";
+import { TVShow } from "types/tv";
 
 export default function Home({ initialMovies, initialSeries }: any) {
   const [moviesResults, setMoviesResults] = useState<Movie[]>();
@@ -26,7 +28,7 @@ export default function Home({ initialMovies, initialSeries }: any) {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const initialMovies = await getTrending("trending/movie/day");
   const initialSeries = await getTrending("trending/tv/day");
 

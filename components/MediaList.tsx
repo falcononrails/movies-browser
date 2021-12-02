@@ -1,7 +1,7 @@
-import getTrending from "@lib/getTrending";
-import { Movie, TVShow } from "@lib/types";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { Movie } from "types/movie";
+import { TVShow } from "types/tv";
 import Media from "./Media";
 
 interface Props {
@@ -19,11 +19,14 @@ export default function MediaList({ results, title, type }: Props) {
         {results?.map((item) => {
           return (
             <Link href={`${type}/${item.id}`} key={item.id}>
-              <Media
-                key={item.id}
-                title={item.title ? item.title : item.name}
-                posterPath={item.poster_path}
-              />
+              <div className="cursor-pointer">
+                <Media
+                  key={item.id}
+                  title={item.title ? item.title : item.name}
+                  posterPath={item.poster_path}
+                  voteAverage={item.vote_average}
+                />
+              </div>
             </Link>
           );
         })}
