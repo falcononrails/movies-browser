@@ -1,5 +1,7 @@
 # Canal Plus Movies Browser
 
+Direct link: https://canalplus-movies-browser.vercel.app
+
 A movies browser built using NextJS, TailwindCSS and TypeScript. The website is powered by the TMDB API.
 
 # Technologies Used
@@ -15,7 +17,7 @@ A movies browser built using NextJS, TailwindCSS and TypeScript. The website is 
 - Install all dependencies: `yarn install`
 - Create a `.env.local` file and put your TMDB API key in it (check .env.example for the format).
 - Run the app locally: `yarn run dev`
-
+- 
 # Home
 
 The home page displays trending movies and tv shows in a grid-display. The user can see the title and the rating of each movie/tv show, or click on a poster to see more details.
