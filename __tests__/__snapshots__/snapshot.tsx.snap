@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div
+  className="mb-10 ml-4 lg:ml-8 mr-4 lg:mr-8 bg-gray-900 text-gray-100"
+>
+  <div
+    className="relative flex w-full flex-wrap items-stretch mb-2 mt-4"
+  >
+    <span
+      className="z-10 h-full leading-snug font-normal absolute text-center text-gray-200 bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"
+    >
+      <svg
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+        />
+      </svg>
+    </span>
+    <input
+      aria-label="Search for whatever you want..."
+      className="px-3 py-3 relative rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10 placeholder-gray-200 bg-gray-700 text-gray-200"
+      onChange={[Function]}
+      placeholder="Search for whatever you want..."
+      type="text"
+    />
+    <div
+      className="flex w-full bg-gray-700 z-10 rounded-md flex-col absolute top-12 left-0"
+    />
+  </div>
+  <h1
+    className="container text-3xl font-heading font-extrabold ml-3 mt-10 md:mt-8"
+  >
+    Trending Movies
+  </h1>
+  <div
+    className="my-auto mx-auto px-4 pt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-7 gap-8"
+  />
+  <h1
+    className="container text-3xl font-heading font-extrabold ml-3 mt-10 md:mt-8"
+  >
+    Trending Series
+  </h1>
+  <div
+    className="my-auto mx-auto px-4 pt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-7 gap-8"
+  />
+</div>
+`;

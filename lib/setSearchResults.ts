@@ -1,13 +1,10 @@
-import { API_KEY, BASE_URL } from "@constants/constants";
+import { BASE_URL } from "@constants/constants";
 import { SearchResult } from "../types/shared";
 
-const sendQuery = async (api_key: string, query: string) => {
-  console.log(
-    `${BASE_URL}search/multi?api_key=${api_key}&query=${query}`
-  );
+export const sendQuery = async (query: string) => {
   try {
     const res = await fetch(
-      `${BASE_URL}search/multi?api_key=${api_key}&query=${query}`
+      `${BASE_URL}search/multi?query=${query}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     );
     return res.json();
   } catch (err) {
@@ -20,7 +17,7 @@ export const setSearchResults = async (query: string, setResults) => {
     setResults([]);
     return;
   }
-  const data = await sendQuery(process.env.API_KEY, query);
+  const data = await sendQuery(query);
   const list: SearchResult[] = data.results
     ?.filter(
       (results) =>

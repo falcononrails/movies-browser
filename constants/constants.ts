@@ -4,4 +4,3 @@ export const ORIGINAL_IMAGE_BASE: string =
   "https://image.tmdb.org/t/p/original";
 export const MOVIE: string = "movie";
 export const TV: string = "tv";
-export const API_KEY = "92b418e837b833be308bbfb1fb2aca1e";
