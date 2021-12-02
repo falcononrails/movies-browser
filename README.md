@@ -17,7 +17,8 @@ A movies browser built using NextJS, TailwindCSS and TypeScript. The website is 
 - Install all dependencies: `yarn install`
 - Create a `.env.local` file and put your TMDB API key in it (check .env.example for the format).
 - Run the app locally: `yarn run dev`
-- 
+- Your can run the test suite using:  `yarn run test`
+
 # Home
 
 The home page displays trending movies and tv shows in a grid-display. The user can see the title and the rating of each movie/tv show, or click on a poster to see more details.
