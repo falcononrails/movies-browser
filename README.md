@@ -1,6 +1,4 @@
-# Canal Plus Movies Browser
-
-Direct link: https://canalplus-movies-browser.vercel.app
+# Movies Browser
 
 A movies browser built using NextJS, TailwindCSS and TypeScript. The website is powered by the TMDB API.
 
