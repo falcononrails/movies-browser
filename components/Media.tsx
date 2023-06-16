@@ -28,7 +28,7 @@ export default function Media({ title, posterPath, voteAverage }: Props) {
           </g>
         </svg>
         <h4 className="text-white ml-1 text-sm font-heading">
-          {parseInt(voteAverage).toFixed(2)}
+          {parseFloat(voteAverage).toFixed(1)}
         </h4>
       </div>
     </div>
