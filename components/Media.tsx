@@ -7,7 +7,7 @@ interface Props {
   voteAverage: string;
 }
 
-export default function Media({ title, posterPath, voteAverage}: Props) {
+export default function Media({ title, posterPath, voteAverage }: Props) {
   return (
     <div className="h-100 w-50">
       <img
@@ -28,8 +28,8 @@ export default function Media({ title, posterPath, voteAverage}: Props) {
           </g>
         </svg>
         <h4 className="text-white ml-1 text-sm font-heading">
-        {voteAverage}
-      </h4>
+          {parseInt(voteAverage).toFixed(2)}
+        </h4>
       </div>
     </div>
   );
